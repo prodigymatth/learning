@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>easywaystolearn</title>
+<title>Prodigy Math</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
@@ -184,7 +184,7 @@ audio { display:none; }
 
 <script>
 let attempts = 0;
-const correctPassword = "goldy";
+const correctPassword = "onclu999";
 const buzzer = document.getElementById("buzzer");
 const ding = document.getElementById("ding");
 const lofi = document.getElementById("lofi");
@@ -193,16 +193,7 @@ const box = document.querySelector(".passwordBox");
 const loaderEl = document.getElementById("loader");
 
 const hints = [
-  "Hint 1: 5 letters",
-  "Hint 2: Starts with 'g'",
-  "Hint 3: Ends with 'y'",
-  "Hint 4: Think shiny metal 😉",
-  "Hint 5: It's a nickname for treasure",
-  "Hint 6: Common in RPGs",
-  "Hint 7: Short and catchy",
-  "Hint 8: Often golden in color",
-  "Hint 9: Legendary and valuable",
-  "Hint 10: The password itself is goldy"
+  "Hint 1, SOLVE IT YOURSELF"
 ];
 
 function fadeOutAudio(audio,duration=1000){
