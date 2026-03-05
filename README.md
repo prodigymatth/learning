@@ -1,3 +1,6 @@
+add a username to this and a dev console with a password that is Emil2014, also make it so in the dev console you can ban people off of the website with the user, also make a board that says "people online" and add the usernames of people on the website, also make it so bad names get filtered out here the code to add it to
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,13 +35,13 @@ body::before {
 @keyframes twinkle { 0%{transform:translate(0,0);}50%{transform:translate(1px,1px);}100%{transform:translate(0,0);} }
 
 /* PASSWORD SCREEN */
-#passwordScreen, #usernameScreen {
+#passwordScreen {
   position:fixed; top:0; left:0; width:100%; height:100vh;
   background: rgba(40,0,80,0.95);
   display:flex; justify-content:center; align-items:center;
   z-index:999;
 }
-.passwordBox, .usernameBox {
+.passwordBox {
   background: rgba(60,0,110,0.95);
   padding:50px 40px;
   border-radius:20px;
@@ -51,7 +54,7 @@ body::before {
 }
 @keyframes fadeInBox { 0%{transform:scale(0.7);opacity:0;}100%{transform:scale(1);opacity:1;} }
 
-.passwordBox h2, .usernameBox h2 {
+.passwordBox h2 {
   font-size:36px; margin-bottom:25px;
   color:#d5b3ff; letter-spacing:2px;
   text-shadow:0 0 30px #a855f7, 0 0 60px #d18fff;
@@ -59,7 +62,7 @@ body::before {
 }
 @keyframes glowText { from{text-shadow:0 0 25px #b16eff,0 0 50px #d18fff;} to{text-shadow:0 0 45px #d18fff,0 0 70px #f1c0ff;} }
 
-.passwordBox input, .usernameBox input {
+.passwordBox input {
   width:100%; padding:16px; font-size:18px;
   border-radius:12px; border:none; margin-bottom:15px;
   outline:none; text-align:center;
@@ -67,9 +70,9 @@ body::before {
   color:white; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
   transition:0.3s;
 }
-.passwordBox input:focus, .usernameBox input:focus { background: rgba(255,255,255,0.12); }
+.passwordBox input:focus { background: rgba(255,255,255,0.12); }
 
-.passwordBox button, .usernameBox button {
+.passwordBox button {
   width:100%; padding:16px; font-size:18px; font-weight:bold;
   border:none; border-radius:12px;
   background: linear-gradient(45deg, #a855f7, #7c3aed);
@@ -77,15 +80,26 @@ body::before {
   box-shadow: 0 0 30px rgba(168,85,247,0.7);
   transition:0.3s;
 }
-.passwordBox button:hover, .usernameBox button:hover {
+.passwordBox button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 50px rgba(200,120,255,0.9);
 }
 
-#hintText, #attemptCounter, #usernameHint {
+#hintText {
   margin-top:12px; font-size:14px; min-height:20px;
   color:#caaeff; opacity:0; transition:0.5s;
 }
+#attemptCounter {
+  margin-top:8px; font-size:12px; color:#bbb;
+}
+
+/* ANIMATIONS */
+@keyframes shake { 0%{transform:translateX(0);}20%{transform:translateX(-8px);}40%{transform:translateX(8px);}60%{transform:translateX(-6px);}80%{transform:translateX(6px);}100%{transform:translateX(0);} }
+@keyframes upDown {0%{transform:translateY(0);}25%{transform:translateY(-15px);}50%{transform:translateY(15px);}75%{transform:translateY(-10px);}100%{transform:translateY(0);}}
+.flash-red { animation: flashRed 0.6s forwards; }
+.flash-green { animation: flashGreen 0.6s forwards; }
+@keyframes flashRed {0%{background-color:rgba(255,50,50,0.2);}50%{background-color:rgba(255,0,0,0.5);}100%{background-color:rgba(60,0,110,0.95);}}
+@keyframes flashGreen {0%{background-color:rgba(50,255,50,0.2);}50%{background-color:rgba(0,255,0,0.5);}100%{background-color:rgba(60,0,110,0.95);}}
 
 /* LOADER */
 #loader {
@@ -107,20 +121,12 @@ h1 { font-size:72px; letter-spacing:5px; margin-bottom:50px; text-shadow:0 0 35p
 .buttonContainer { display:flex; flex-direction:column; gap:15px; width:280px; }
 button.gameBtn { padding:15px; font-size:17px; background: rgba(60,0,100,0.15); color:white; border:1px solid rgba(200,150,255,0.3); border-radius:8px; cursor:pointer; transition:0.3s; }
 button.gameBtn:hover { background: rgba(120,0,180,0.3); transform:translateY(-3px); box-shadow:0 0 25px #d18fff;}
-
 #homeBtn { position:fixed; top:15px; left:15px; padding:6px 10px; font-size:13px; background:rgba(255,255,255,0.08); border:1px solid rgba(0,0,0,0.2); border-radius:4px; color:#ccc; cursor:pointer; display:none; z-index:20; transition:0.3s;}
 #homeBtn:hover { background:rgba(200,150,255,0.25); color:white; }
-
-/* BOTTOM BUTTONS */
-#bottomButtons { position:fixed; bottom:15px; left:50%; transform:translateX(-50%); display:flex; gap:15px; z-index:20; }
-#bottomButtons button { padding:10px 14px; font-size:14px; border:none; border-radius:6px; cursor:pointer; background: rgba(100,0,200,0.5); color:white; }
-#bottomButtons button:hover { background: rgba(140,0,250,0.7); }
-
-/* DEV CONSOLE */
-#devConsole { position:fixed; bottom:60px; right:15px; background:rgba(20,0,60,0.95); padding:15px; border-radius:10px; border:1px solid rgba(150,100,255,0.3); color:white; display:none; z-index:30; width:300px; }
-#devConsole input { width:100%; padding:6px; margin-top:5px; border-radius:6px; border:none; outline:none; }
-#devConsole button { margin-top:5px; padding:6px 10px; border:none; border-radius:6px; background:#7c3aed; color:white; cursor:pointer; }
-
+.more-content { margin-top:250px; text-align:center; opacity:0; transform:translateY(60px); transition:1s ease; }
+.more-content.visible { opacity:1; transform:translateY(0); }
+.more-content h2 { font-size:40px; margin-bottom:12px; }
+.more-content p { font-size:18px; color:#ccc; }
 iframe, embed { position:fixed; top:0; left:0; width:100%; height:100vh; border:none; display:none; z-index:5; }
 
 /* AUDIO */
@@ -140,20 +146,10 @@ audio { display:none; }
   </div>
 </div>
 
-<!-- USERNAME SCREEN -->
-<div id="usernameScreen" style="display:none;">
-  <div class="usernameBox">
-    <h2>Enter Username</h2>
-    <input type="text" id="usernameInput" placeholder="Your username">
-    <button onclick="setUsername()">Join</button>
-    <div id="usernameHint"></div>
-  </div>
-</div>
-
 <div id="loader">onclu</div>
 <button id="homeBtn" onclick="goHome()">home</button>
 
-<div class="container fade-start" id="homeScreen" style="display:none;">
+<div class="container fade-start" id="homeScreen">
   <h1>onclu</h1>
   <div class="buttonContainer">
     <button class="gameBtn" onclick="openGame('hoodaFrame')">HoodaMath</button>
@@ -168,21 +164,9 @@ audio { display:none; }
   </div>
 </div>
 
-<!-- BOTTOM BUTTONS -->
-<div id="bottomButtons">
-  <button onclick="toggleDev()">Dev Only</button>
-  <button onclick="showActivePlayers()">Active Players</button>
-</div>
-
-<!-- DEV CONSOLE -->
-<div id="devConsole">
-  <strong>Dev Console</strong>
-  <div>Password: <input type="password" id="devPassword" placeholder="Enter Dev Password"></div>
-  <button onclick="loginDev()">Login</button>
-  <div id="devActions" style="display:none;">
-    <input type="text" id="banUserInput" placeholder="Username to ban">
-    <button onclick="banUser()">Ban User</button>
-  </div>
+<div class="more-content" id="moreContent">
+  <h2>I might add more features</h2>
+  <p>Gimme ideas!</p>
 </div>
 
 <iframe id="hoodaFrame" src="https://www.hoodamath.com/" allowfullscreen></iframe>
@@ -195,6 +179,7 @@ audio { display:none; }
 <iframe id="cheeseFrame" src="https://stanthecheeseman.github.io/" allowfullscreen></iframe>
 <iframe id="twoplayFrame" src="https://www.twoplayergames.org" allowfullscreen></iframe>
 
+
 <!-- AUDIO -->
 <audio id="buzzer" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
 <audio id="ding" src="https://www.soundjay.com/button/sounds/button-3.mp3"></audio>
@@ -203,20 +188,12 @@ audio { display:none; }
 <script>
 let attempts = 0;
 const correctPassword = "goldy";
-const bannedUsers = JSON.parse(localStorage.getItem("bannedUsers")||"[]");
-let onlineUsers = JSON.parse(localStorage.getItem("onlineUsers")||"[]");
-let currentUsername = localStorage.getItem("currentUser")||"";
-
-const badWords = ["badword1","badword2","badword3"]; // add more here
-
 const buzzer = document.getElementById("buzzer");
 const ding = document.getElementById("ding");
 const lofi = document.getElementById("lofi");
 const screen = document.getElementById("passwordScreen");
 const box = document.querySelector(".passwordBox");
 const loaderEl = document.getElementById("loader");
-const usernameScreen = document.getElementById("usernameScreen");
-const onlineList = document.createElement("ul");
 
 const hints = [
   "Hint 1: 5 letters",
@@ -244,6 +221,7 @@ function checkPassword(){
   const entered = document.getElementById("passwordInput").value;
   const hint = document.getElementById("hintText");
   const counter = document.getElementById("attemptCounter");
+
   if(entered === correctPassword){
     ding.play();
     screen.classList.add("flash-green");
@@ -251,8 +229,10 @@ function checkPassword(){
     loaderEl.classList.add("active");
     setTimeout(()=>{
       screen.style.display="none";
-      usernameScreen.style.display="flex";
       loaderEl.classList.remove("active");
+      document.getElementById("homeScreen").style.display="flex";
+      lofi.volume = 0.2;
+      lofi.play();
       screen.classList.remove("flash-green");
       box.style.animation = "";
     },2500);
@@ -269,50 +249,38 @@ function checkPassword(){
   }
 }
 
-document.getElementById("passwordInput").addEventListener("keypress", e=>{ if(e.key==="Enter") checkPassword(); });
-
-function setUsername(){
-  const input = document.getElementById("usernameInput");
-  const hint = document.getElementById("usernameHint");
-  const name = input.value.trim();
-  if(name.length<3){ hint.innerText="Username too short"; hint.style.opacity=1; return; }
-  if(badWords.some(word => name.toLowerCase().includes(word))){ hint.innerText="Bad username detected"; hint.style.opacity=1; return; }
-  if(bannedUsers.includes(name)){ hint.innerText="You are banned"; hint.style.opacity=1; return; }
-
-  currentUsername = name;
-  if(!onlineUsers.includes(name)) onlineUsers.push(name);
-  localStorage.setItem("currentUser", name);
-  localStorage.setItem("onlineUsers", JSON.stringify(onlineUsers));
-
-  usernameScreen.style.display="none";
-  document.getElementById("homeScreen").style.display="flex";
-  lofi.volume=0.2; lofi.play();
-}
-
-function toggleDev(){ document.getElementById("devConsole").style.display="block"; }
-function loginDev(){ 
-  const pw = document.getElementById("devPassword").value;
-  if(pw==="Emil2014") document.getElementById("devActions").style.display="block"; 
-  else alert("Wrong password!"); 
-}
-
-function banUser(){
-  const name = document.getElementById("banUserInput").value.trim();
-  if(!name){ alert("Enter a username"); return; }
-  if(!onlineUsers.includes(name)){ alert("User not found"); return; }
-  bannedUsers.push(name);
-  const idx = onlineUsers.indexOf(name);
-  if(idx>-1) onlineUsers.splice(idx,1);
-  localStorage.setItem("bannedUsers", JSON.stringify(bannedUsers));
-  localStorage.setItem("onlineUsers", JSON.stringify(onlineUsers));
-  alert(name+" has been banned!");
-}
-
-function showActivePlayers(){
-  const list = onlineUsers.filter(u=>!bannedUsers.includes(u));
-  alert("Active Players:\n" + (list.length?list.join("\n"):"No active players"));
-}
+document.getElementById("passwordInput").addEventListener("keypress", e=>{ if(e.key==="Enter") checkPassword();});
 
 // GAME FUNCTIONS
 const home=document.getElementById("homeScreen");
-const homeBtn=document.get
+const homeBtn=document.getElementById("homeBtn");
+const more=document.getElementById("moreContent");
+
+function hideAll(){ document.querySelectorAll("iframe, embed").forEach(el => el.style.display="none"); }
+
+function openGame(id){
+  loaderEl.classList.add("active");
+  fadeOutAudio(lofi,800);
+  setTimeout(()=>{
+    home.style.display="none";
+    hideAll();
+    document.getElementById(id).style.display="block";
+    homeBtn.style.display="block";
+    loaderEl.classList.remove("active");
+  },600);
+}
+
+function goHome(){
+  hideAll();
+  home.style.display="flex";
+  homeBtn.style.display="none";
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+window.addEventListener('scroll',()=>{
+  const trigger=window.scrollY + window.innerHeight - 100;
+  if(trigger>more.offsetTop){ more.classList.add('visible'); }
+});
+</script>
+</body>
+</html>
