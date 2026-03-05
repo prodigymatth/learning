@@ -229,7 +229,10 @@ function checkPassword(){
     counter.innerText = "Attempts: " + attempts;
     if(attempts<=hints.length) hint.innerText = hints[attempts-1];
     else if(attempts>=50){ hint.innerText = "Password:Gullible"; }
-     else if(attempts>=1000){ hint.innerText = "fine its onclu999"; }
+            
+    else if(attempts >= 1000) {
+        hint.innerText = "Fine, its YO MAMMA ";
+
     hint.style.opacity=1;
     screen.classList.add("flash-red");
     box.style.animation = "shake 0.5s";
