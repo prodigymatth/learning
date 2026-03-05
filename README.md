@@ -231,8 +231,6 @@ function checkPassword(){
     // HINT / PASSWORD MESSAGES
     if(attempts <= hints.length) {
       hint.innerText = hints[attempts - 1];
-     } else if(attempts >= 1) {
-      hint.innerText = "Get to 1k attempts"
     } else if(attempts >= 1000) {
       hint.innerText = "Fine, the password is YO MAMMA";
     } else if(attempts >= 50) {
@@ -240,6 +238,8 @@ function checkPassword(){
     } else {
       hint.innerText = "Keep trying!";
     }
+      } else if(attempts >= 1) {
+      hint.innerText = "Get to 1k attempts"
 
     hint.style.opacity = 1;
     screen.classList.add("flash-red");
