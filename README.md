@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -231,6 +231,8 @@ function checkPassword(){
     // HINT / PASSWORD MESSAGES
     if(attempts <= hints.length) {
       hint.innerText = hints[attempts - 1];
+     } else if(attempts >= 1) {
+      hint.innerText = "Get to 1k attempts"
     } else if(attempts >= 1000) {
       hint.innerText = "Fine, the password is YO MAMMA";
     } else if(attempts >= 50) {
