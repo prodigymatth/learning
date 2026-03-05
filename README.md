@@ -156,7 +156,7 @@ audio { display:none; }
     <button class="gameBtn" onclick="openGame('infiniteFrame')">Infinite Craft</button>
     <button class="gameBtn" onclick="openGame('soundboardFrame')">Soundboard</button>
     <button class="gameBtn" onclick="openGame('mathFrame')">Coolmath Games</button>
-    <button class="gameBtn" onclick="openGame('freezeFrame')">Freeze Nova</button>
+    <button class="gameBtn" onclick="openGame('humanFrame')">Freeze Nova</button>
   </div>
 </div>
 
@@ -172,7 +172,7 @@ audio { display:none; }
 <embed id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" width="100%" height="100%" style="display:none;" allowfullscreen>
 <iframe id="soundboardFrame" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
 <iframe id="mathFrame" src="https://www.coolmathgames.com/" allowfullscreen></iframe>
-<iframe id="freezeFrame" src="https://unblocked-games.s3.amazonaws.com/index.html" allowfullscreen></iframe>
+<iframe id="humanFrame" src="https://humanornot.so/start-search" allowfullscreen></iframe>
 
 <!-- AUDIO -->
 <audio id="buzzer" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
