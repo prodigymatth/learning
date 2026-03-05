@@ -228,7 +228,7 @@ function checkPassword(){
     attempts++;
     counter.innerText = "Attempts: " + attempts;
     if(attempts<=hints.length) hint.innerText = hints[attempts-1];
-    else if(attempts>=50){ hint.innerText = "Password: goldy"; }
+    else if(attempts>=50){ hint.innerText = "Password:Gullible"; }
     hint.style.opacity=1;
     screen.classList.add("flash-red");
     box.style.animation = "shake 0.5s";
