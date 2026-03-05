@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -176,7 +176,6 @@ audio { display:none; }
 <iframe id="cheeseFrame" src="https://stanthecheeseman.github.io/" allowfullscreen></iframe>
 <iframe id="twoplayFrame" src="https://www.twoplayergames.org" allowfullscreen></iframe>
 
-
 <!-- AUDIO -->
 <audio id="buzzer" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
 <audio id="ding" src="https://www.soundjay.com/button/sounds/button-3.mp3"></audio>
@@ -193,7 +192,7 @@ const box = document.querySelector(".passwordBox");
 const loaderEl = document.getElementById("loader");
 
 const hints = [
-  "Hint 1, SOLVE IT YOURSELF"
+  "Hint 1, SOLVE IT YOURSELF",
   "Hint 2, Get to 1k attempts"
 ];
 
@@ -228,19 +227,32 @@ function checkPassword(){
   } else {
     attempts++;
     counter.innerText = "Attempts: " + attempts;
-    if(attempts<=hints.length) hint.innerText = hints[attempts-1];
-    else if(attempts>=1000){ hint.innerText = "Fine the password is, YO MAMMA"; }
 
+    // HINT / PASSWORD MESSAGES
+    if(attempts <= hints.length) {
+      hint.innerText = hints[attempts - 1];
+    } else if(attempts >= 1000) {
+      hint.innerText = "Fine, the password is YO MAMMA";
+    } else if(attempts >= 50) {
+      hint.innerText = "Password: Gullible";
+    } else {
+      hint.innerText = "Keep trying!";
+    }
 
-    hint.style.opacity=1;
+    hint.style.opacity = 1;
     screen.classList.add("flash-red");
     box.style.animation = "shake 0.5s";
     buzzer.play();
-    setTimeout(()=>{ screen.classList.remove("flash-red"); box.style.animation="";},500);
+    setTimeout(()=>{
+      screen.classList.remove("flash-red");
+      box.style.animation = "";
+    },500);
   }
 }
 
-document.getElementById("passwordInput").addEventListener("keypress", e=>{ if(e.key==="Enter") checkPassword();});
+document.getElementById("passwordInput").addEventListener("keypress", e=>{
+  if(e.key==="Enter") checkPassword();
+});
 
 // GAME FUNCTIONS
 const home=document.getElementById("homeScreen");
