@@ -6,33 +6,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
-body { min-height:100vh; background: linear-gradient(rgba(30,0,70,0.7), rgba(10,0,30,0.9)), url('https://media.gettyimages.com/id/881752658/video/journey-through-galaxy.jpg?s=640x640&k=20&c=ITfk5mu21pnyUjb7tTndTm8LMBqpPS4YBMY2Il_nGyQ=') no-repeat center center fixed; background-size:cover; color:white; overflow-x:hidden; scroll-behavior:smooth; position:relative; }
-body::before { content:""; position:fixed; top:0; left:0; width:100%; height:100%; background: radial-gradient(#fff 1px, transparent 1px); background-size:3px 3px; pointer-events:none; animation: twinkle 6s linear infinite; opacity:0.3; }
+
+/* BODY & BACKGROUND */
+body {
+  min-height:100vh;
+  background: linear-gradient(rgba(30,0,70,0.7), rgba(10,0,30,0.9)),
+  url('https://media.gettyimages.com/id/881752658/video/journey-through-galaxy.jpg?s=640x640&k=20&c=ITfk5mu21pnyUjb7tTndTm8LMBqpPS4YBMY2Il_nGyQ=') no-repeat center center fixed;
+  background-size:cover;
+  color:white;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  position:relative;
+}
+
+/* PARTICLE EFFECT */
+body::before {
+  content:"";
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background: radial-gradient(#fff 1px, transparent 1px);
+  background-size:3px 3px;
+  pointer-events:none;
+  animation: twinkle 6s linear infinite;
+  opacity:0.3;
+}
 @keyframes twinkle { 0%{transform:translate(0,0);}50%{transform:translate(1px,1px);}100%{transform:translate(0,0);} }
-#passwordScreen, #usernameScreen { position:fixed; top:0; left:0; width:100%; height:100vh; background: rgba(40,0,80,0.95); display:flex; justify-content:center; align-items:center; z-index:999; }
-.passwordBox, .usernameBox { background: rgba(60,0,110,0.95); padding:50px 40px; border-radius:20px; border:2px solid rgba(200,150,255,0.3); box-shadow: 0 0 60px rgba(180,80,255,0.5); text-align:center; width:400px; transition: all 0.4s ease; animation: fadeInBox 0.6s ease forwards; }
+
+/* PASSWORD SCREEN */
+#passwordScreen, #usernameScreen {
+  position:fixed; top:0; left:0; width:100%; height:100vh;
+  background: rgba(40,0,80,0.95);
+  display:flex; justify-content:center; align-items:center;
+  z-index:999;
+}
+.passwordBox, .usernameBox {
+  background: rgba(60,0,110,0.95);
+  padding:50px 40px;
+  border-radius:20px;
+  border:2px solid rgba(200,150,255,0.3);
+  box-shadow: 0 0 60px rgba(180,80,255,0.5);
+  text-align:center;
+  width:400px;
+  transition: all 0.4s ease;
+  animation: fadeInBox 0.6s ease forwards;
+}
 @keyframes fadeInBox { 0%{transform:scale(0.7);opacity:0;}100%{transform:scale(1);opacity:1;} }
-.passwordBox h2, .usernameBox h2 { font-size:36px; margin-bottom:25px; color:#d5b3ff; letter-spacing:2px; text-shadow:0 0 30px #a855f7, 0 0 60px #d18fff; animation: glowText 2.5s infinite alternate; }
+
+.passwordBox h2, .usernameBox h2 {
+  font-size:36px; margin-bottom:25px;
+  color:#d5b3ff; letter-spacing:2px;
+  text-shadow:0 0 30px #a855f7, 0 0 60px #d18fff;
+  animation: glowText 2.5s infinite alternate;
+}
 @keyframes glowText { from{text-shadow:0 0 25px #b16eff,0 0 50px #d18fff;} to{text-shadow:0 0 45px #d18fff,0 0 70px #f1c0ff;} }
-.passwordBox input, .usernameBox input { width:100%; padding:16px; font-size:18px; border-radius:12px; border:none; margin-bottom:15px; outline:none; text-align:center; background: rgba(255,255,255,0.05); color:white; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); transition:0.3s; }
+
+.passwordBox input, .usernameBox input {
+  width:100%; padding:16px; font-size:18px;
+  border-radius:12px; border:none; margin-bottom:15px;
+  outline:none; text-align:center;
+  background: rgba(255,255,255,0.05);
+  color:white; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+  transition:0.3s;
+}
 .passwordBox input:focus, .usernameBox input:focus { background: rgba(255,255,255,0.12); }
-.passwordBox button, .usernameBox button { width:100%; padding:16px; font-size:18px; font-weight:bold; border:none; border-radius:12px; background: linear-gradient(45deg, #a855f7, #7c3aed); color:white; cursor:pointer; box-shadow: 0 0 30px rgba(168,85,247,0.7); transition:0.3s; }
-.passwordBox button:hover, .usernameBox button:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(200,120,255,0.9); }
-#hintText, #attemptCounter, #usernameHint { margin-top:12px; font-size:14px; min-height:20px; color:#caaeff; opacity:0; transition:0.5s; }
-#loader { position:fixed; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,#2e0255,#5a00a5); z-index:15; display:flex; align-items:center; justify-content:center; font-size:36px; letter-spacing:6px; color:#e0c0ff; font-weight:bold; text-shadow: 0 0 35px #b16eff, 0 0 70px #d18fff; animation: pulseLoader 2s infinite alternate; }
+
+.passwordBox button, .usernameBox button {
+  width:100%; padding:16px; font-size:18px; font-weight:bold;
+  border:none; border-radius:12px;
+  background: linear-gradient(45deg, #a855f7, #7c3aed);
+  color:white; cursor:pointer;
+  box-shadow: 0 0 30px rgba(168,85,247,0.7);
+  transition:0.3s;
+}
+.passwordBox button:hover, .usernameBox button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(200,120,255,0.9);
+}
+
+#hintText, #attemptCounter, #usernameHint {
+  margin-top:12px; font-size:14px; min-height:20px;
+  color:#caaeff; opacity:0; transition:0.5s;
+}
+
+/* LOADER */
+#loader {
+  position:fixed; top:0; left:-100%; width:100%; height:100%;
+  background:linear-gradient(90deg,#2e0255,#5a00a5);
+  z-index:15; display:flex; align-items:center; justify-content:center;
+  font-size:36px; letter-spacing:6px; color:#e0c0ff; font-weight:bold;
+  text-shadow: 0 0 35px #b16eff, 0 0 70px #d18fff;
+  animation: pulseLoader 2s infinite alternate;
+}
 #loader.active { left:0; }
 @keyframes pulseLoader { 0% { text-shadow:0 0 35px #b16eff,0 0 70px #d18fff;} 100% { text-shadow:0 0 50px #d18fff,0 0 90px #f1c0ff;} }
-#homeBtn { position:fixed; top:15px; left:15px; padding:6px 10px; font-size:13px; background:rgba(255,255,255,0.08); border:1px solid rgba(0,0,0,0.2); border-radius:4px; color:#ccc; cursor:pointer; display:none; z-index:20; transition:0.3s;}
-#homeBtn:hover { background:rgba(200,150,255,0.25); color:white; }
+
+/* HOME SCREEN */
+.fade-start { opacity:0; transform: translateY(40px); animation: fadeSlide 1.2s ease forwards; }
+@keyframes fadeSlide { to { opacity:1; transform: translateY(0); } }
 .container { display:flex; flex-direction:column; align-items:center; justify-content:center; padding-top:80px; text-align:center; }
 h1 { font-size:72px; letter-spacing:5px; margin-bottom:50px; text-shadow:0 0 35px #a855f7, 0 0 70px #d18fff;}
 .buttonContainer { display:flex; flex-direction:column; gap:15px; width:280px; }
 button.gameBtn { padding:15px; font-size:17px; background: rgba(60,0,100,0.15); color:white; border:1px solid rgba(200,150,255,0.3); border-radius:8px; cursor:pointer; transition:0.3s; }
 button.gameBtn:hover { background: rgba(120,0,180,0.3); transform:translateY(-3px); box-shadow:0 0 25px #d18fff;}
-#onlineBoard { position:fixed; top:15px; right:15px; background: rgba(60,0,110,0.85); padding:15px 20px; border-radius:12px; border:1px solid rgba(200,150,255,0.3); max-width:200px; font-size:14px; text-align:left; z-index:20; }
-#devConsole { position:fixed; bottom:10px; right:10px; background:rgba(20,0,60,0.9); padding:15px; border-radius:10px; border:1px solid rgba(150,100,255,0.3); color:white; display:none; z-index:30; width:300px; }
+
+#homeBtn { position:fixed; top:15px; left:15px; padding:6px 10px; font-size:13px; background:rgba(255,255,255,0.08); border:1px solid rgba(0,0,0,0.2); border-radius:4px; color:#ccc; cursor:pointer; display:none; z-index:20; transition:0.3s;}
+#homeBtn:hover { background:rgba(200,150,255,0.25); color:white; }
+
+/* BOTTOM BUTTONS */
+#bottomButtons { position:fixed; bottom:15px; left:50%; transform:translateX(-50%); display:flex; gap:15px; z-index:20; }
+#bottomButtons button { padding:10px 14px; font-size:14px; border:none; border-radius:6px; cursor:pointer; background: rgba(100,0,200,0.5); color:white; }
+#bottomButtons button:hover { background: rgba(140,0,250,0.7); }
+
+/* DEV CONSOLE */
+#devConsole { position:fixed; bottom:60px; right:15px; background:rgba(20,0,60,0.95); padding:15px; border-radius:10px; border:1px solid rgba(150,100,255,0.3); color:white; display:none; z-index:30; width:300px; }
 #devConsole input { width:100%; padding:6px; margin-top:5px; border-radius:6px; border:none; outline:none; }
 #devConsole button { margin-top:5px; padding:6px 10px; border:none; border-radius:6px; background:#7c3aed; color:white; cursor:pointer; }
+
+iframe, embed { position:fixed; top:0; left:0; width:100%; height:100vh; border:none; display:none; z-index:5; }
+
+/* AUDIO */
+audio { display:none; }
 </style>
 </head>
 <body>
@@ -60,7 +152,6 @@ button.gameBtn:hover { background: rgba(120,0,180,0.3); transform:translateY(-3p
 
 <div id="loader">onclu</div>
 <button id="homeBtn" onclick="goHome()">home</button>
-<div id="onlineBoard"><strong>People Online:</strong><ul id="onlineList"></ul></div>
 
 <div class="container fade-start" id="homeScreen" style="display:none;">
   <h1>onclu</h1>
@@ -77,6 +168,13 @@ button.gameBtn:hover { background: rgba(120,0,180,0.3); transform:translateY(-3p
   </div>
 </div>
 
+<!-- BOTTOM BUTTONS -->
+<div id="bottomButtons">
+  <button onclick="toggleDev()">Dev Only</button>
+  <button onclick="showActivePlayers()">Active Players</button>
+</div>
+
+<!-- DEV CONSOLE -->
 <div id="devConsole">
   <strong>Dev Console</strong>
   <div>Password: <input type="password" id="devPassword" placeholder="Enter Dev Password"></div>
@@ -105,10 +203,11 @@ button.gameBtn:hover { background: rgba(120,0,180,0.3); transform:translateY(-3p
 <script>
 let attempts = 0;
 const correctPassword = "goldy";
-const bannedUsers = [];
-let currentUsername = "";
+const bannedUsers = JSON.parse(localStorage.getItem("bannedUsers")||"[]");
+let onlineUsers = JSON.parse(localStorage.getItem("onlineUsers")||"[]");
+let currentUsername = localStorage.getItem("currentUser")||"";
+
 const badWords = ["badword1","badword2","badword3"]; // add more here
-const onlineUsers = [];
 
 const buzzer = document.getElementById("buzzer");
 const ding = document.getElementById("ding");
@@ -117,6 +216,7 @@ const screen = document.getElementById("passwordScreen");
 const box = document.querySelector(".passwordBox");
 const loaderEl = document.getElementById("loader");
 const usernameScreen = document.getElementById("usernameScreen");
+const onlineList = document.createElement("ul");
 
 const hints = [
   "Hint 1: 5 letters",
@@ -144,7 +244,6 @@ function checkPassword(){
   const entered = document.getElementById("passwordInput").value;
   const hint = document.getElementById("hintText");
   const counter = document.getElementById("attemptCounter");
-
   if(entered === correctPassword){
     ding.play();
     screen.classList.add("flash-green");
@@ -170,7 +269,7 @@ function checkPassword(){
   }
 }
 
-document.getElementById("passwordInput").addEventListener("keypress", e=>{ if(e.key==="Enter") checkPassword();});
+document.getElementById("passwordInput").addEventListener("keypress", e=>{ if(e.key==="Enter") checkPassword(); });
 
 function setUsername(){
   const input = document.getElementById("usernameInput");
@@ -181,61 +280,20 @@ function setUsername(){
   if(bannedUsers.includes(name)){ hint.innerText="You are banned"; hint.style.opacity=1; return; }
 
   currentUsername = name;
-  onlineUsers.push(name);
-  updateOnlineBoard();
+  if(!onlineUsers.includes(name)) onlineUsers.push(name);
+  localStorage.setItem("currentUser", name);
+  localStorage.setItem("onlineUsers", JSON.stringify(onlineUsers));
+
   usernameScreen.style.display="none";
   document.getElementById("homeScreen").style.display="flex";
-  lofi.volume=0.2;
-  lofi.play();
+  lofi.volume=0.2; lofi.play();
 }
 
-function updateOnlineBoard(){
-  const list = document.getElementById("onlineList");
-  list.innerHTML = "";
-  onlineUsers.forEach(user => {
-    if(!bannedUsers.includes(user)) list.innerHTML += `<li>${user}</li>`;
-  });
-}
-
-// GAME FUNCTIONS
-const home=document.getElementById("homeScreen");
-const homeBtn=document.getElementById("homeBtn");
-const more=document.getElementById("moreContent");
-
-function hideAll(){ document.querySelectorAll("iframe, embed").forEach(el => el.style.display="none"); }
-
-function openGame(id){
-  loaderEl.classList.add("active");
-  fadeOutAudio(lofi,800);
-  setTimeout(()=>{
-    home.style.display="none";
-    hideAll();
-    document.getElementById(id).style.display="block";
-    homeBtn.style.display="block";
-    loaderEl.classList.remove("active");
-  },600);
-}
-
-function goHome(){
-  hideAll();
-  home.style.display="flex";
-  homeBtn.style.display="none";
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-window.addEventListener('scroll',()=>{
-  const trigger=window.scrollY + window.innerHeight - 100;
-  if(trigger>more.offsetTop){ more.classList.add('visible'); }
-});
-
-// DEV CONSOLE
-function loginDev(){
-  const password = document.getElementById("devPassword").value;
-  const actions = document.getElementById("devActions");
-  if(password==="Emil2014"){
-    actions.style.display="block";
-    alert("Dev Console Activated!");
-  } else alert("Wrong password!");
+function toggleDev(){ document.getElementById("devConsole").style.display="block"; }
+function loginDev(){ 
+  const pw = document.getElementById("devPassword").value;
+  if(pw==="Emil2014") document.getElementById("devActions").style.display="block"; 
+  else alert("Wrong password!"); 
 }
 
 function banUser(){
@@ -243,11 +301,18 @@ function banUser(){
   if(!name){ alert("Enter a username"); return; }
   if(!onlineUsers.includes(name)){ alert("User not found"); return; }
   bannedUsers.push(name);
-  const index = onlineUsers.indexOf(name);
-  if(index>-1) onlineUsers.splice(index,1);
-  updateOnlineBoard();
-  alert(name + " has been banned!");
+  const idx = onlineUsers.indexOf(name);
+  if(idx>-1) onlineUsers.splice(idx,1);
+  localStorage.setItem("bannedUsers", JSON.stringify(bannedUsers));
+  localStorage.setItem("onlineUsers", JSON.stringify(onlineUsers));
+  alert(name+" has been banned!");
 }
-</script>
-</body>
-</html>
+
+function showActivePlayers(){
+  const list = onlineUsers.filter(u=>!bannedUsers.includes(u));
+  alert("Active Players:\n" + (list.length?list.join("\n"):"No active players"));
+}
+
+// GAME FUNCTIONS
+const home=document.getElementById("homeScreen");
+const homeBtn=document.get
