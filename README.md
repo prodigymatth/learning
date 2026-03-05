@@ -224,14 +224,24 @@ function checkPassword(){
       screen.classList.remove("flash-green");
       box.style.animation = "";
     },2500);
-  } else {
+} else {
     attempts++;
     counter.innerText = "Attempts: " + attempts;
-    if(attempts<=hints.length) hint.innerText = hints[attempts-1];
-    else if(attempts>=50){ hint.innerText = "Password:Gullible"; }
-  }       
-    else if(attempts >= 1000) {
-        hint.innerText = "Fine, its YO MAMMA ";
+
+    if(attempts <= hints.length) {
+        // Show regular hints
+        hint.innerText = hints[attempts - 1];
+    } else if(attempts >= 1000) {
+        // 1000+ attempts special message
+        hint.innerText = "Fine, it's YO MAMMA";
+    } else if(attempts >= 50) {
+        // 50+ attempts message
+        hint.innerText = "Password: Gullible";
+    } else {
+        // fallback if needed
+        hint.innerText = "Keep trying!";
+    }
+}
 
     hint.style.opacity=1;
     screen.classList.add("flash-red");
