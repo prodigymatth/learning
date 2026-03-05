@@ -156,7 +156,7 @@ audio { display:none; }
     <button class="gameBtn" onclick="openGame('infiniteFrame')">Infinite Craft</button>
     <button class="gameBtn" onclick="openGame('soundboardFrame')">Soundboard</button>
     <button class="gameBtn" onclick="openGame('mathFrame')">Coolmath Games</button>
-    <button class="gameBtn" onclick="openGame('humanFrame')">Freeze Nova</button>
+    <button class="gameBtn" onclick="openGame('humanFrame')">Human Or AI?</button>
   </div>
 </div>
 
