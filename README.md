@@ -1,7 +1,4 @@
-add a username to this and a dev console with a password that is Emil2014, also make it so in the dev console you can ban people off of the website with the user, also make a board that says "people online" and add the usernames of people on the website, also make it so bad names get filtered out here the code to add it to
 
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
