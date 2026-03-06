@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
+
+
+<iframe src="//incr.easrng.net/badge?key=changeme" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
 
 /* BODY & BACKGROUND */
 body {
@@ -162,8 +165,6 @@ audio { display:none; }
   </div>
 </div>
 
-<iframe src="//incr.easrng.net/badge?key=changeme" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
-
 
 <div class="more-content" id="moreContent">
   <h2>I might add more features</h2>
@@ -293,6 +294,7 @@ window.addEventListener('scroll',()=>{
 </script>
 </body>
 </html>
+
 
 
 
