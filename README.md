@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -236,7 +236,8 @@ function checkPassword(){
     } else if(attempts >= 50) {
       hint.innerText = "Password: Gullible";
     } else {
-      hint.innerText = "Get to 1k attempts";
+      hint.innerText = "Keep trying!";
+    }
 
     hint.style.opacity = 1;
     screen.classList.add("flash-red");
