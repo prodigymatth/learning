@@ -162,6 +162,9 @@ audio { display:none; }
   </div>
 </div>
 
+<iframe src="//incr.easrng.net/badge?key=changeme" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
+
+
 <div class="more-content" id="moreContent">
   <h2>I might add more features</h2>
   <p>Gimme ideas!</p>
@@ -290,5 +293,6 @@ window.addEventListener('scroll',()=>{
 </script>
 </body>
 </html>
+
 
 
