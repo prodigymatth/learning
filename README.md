@@ -157,7 +157,7 @@ audio { display:none; }
     <button class="gameBtn" onclick="openGame('soundboardFrame')">Soundboard</button>
     <button class="gameBtn" onclick="openGame('mathFrame')">Coolmath Games</button>
     <button class="gameBtn" onclick="openGame('cheeseFrame')">Stan The Cheese Man</button>
-    <button class="gameBtn" onclick="openGame('twoplayFrame')">Two Player Games</button>
+    <button class="gameBtn" onclick="openGame('twoFrame')">Two Player Org</button>
   </div>
 </div>
 
@@ -174,7 +174,7 @@ audio { display:none; }
 <iframe id="soundboardFrame" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
 <iframe id="mathFrame" src="https://www.coolmathgames.com/" allowfullscreen></iframe>
 <iframe id="cheeseFrame" src="https://stanthecheeseman.github.io/" allowfullscreen></iframe>
-<iframe id="twoplayFrame" src="twoplayer-wrapper.html" allowfullscreen></iframe>
+<iframe id="twoFrame" src="https://www.twoplayergames.org" allowfullscreen></iframe>
 
 <!-- AUDIO -->
 <audio id="buzzer" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
