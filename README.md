@@ -157,7 +157,7 @@ audio { display:none; }
     <button class="gameBtn" onclick="openGame('soundboardFrame')">Soundboard</button>
     <button class="gameBtn" onclick="openGame('mathFrame')">Coolmath Games</button>
     <button class="gameBtn" onclick="openGame('cheeseFrame')">Stan The Cheese Man</button>
-    <button class="gameBtn" onclick="openGame('twoFrame')">Two Player Org</button>
+    <button class="gameBtn" onclick="openGame('basketFrame')">Basket Random</button>
     <button class="gameBtn" onclick="openGame('agentFrame')">For Khalil</button>
   </div>
 </div>
@@ -175,7 +175,7 @@ audio { display:none; }
 <iframe id="soundboardFrame" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
 <iframe id="mathFrame" src="https://www.coolmathgames.com/" allowfullscreen></iframe>
 <iframe id="cheeseFrame" src="https://stanthecheeseman.github.io/" allowfullscreen></iframe>
-<iframe id="twoFrame" src="https://www.twoplayergames.org" allowfullscreen></iframe>
+<iframe id="basketFrame" src="https://www.twoplayergames.org/game/basket-random" allowfullscreen></iframe>
 <iframe id="agentFrame" src="https://www.twoplayergames.org/game/agent-walker-vs-skibidi-toilets" allowfullscreen></iframe>
 
 
@@ -290,4 +290,5 @@ window.addEventListener('scroll',()=>{
 </script>
 </body>
 </html>
+
 
