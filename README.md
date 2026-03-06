@@ -8,8 +8,6 @@
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
 
 
-<iframe src="//incr.easrng.net/badge?key=changeme" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
-
 /* BODY & BACKGROUND */
 body {
   min-height:100vh;
@@ -182,6 +180,7 @@ audio { display:none; }
 <iframe id="basketFrame" src="https://www.twoplayergames.org/game/basket-random" allowfullscreen></iframe>
 <iframe id="agentFrame" src="https://www.twoplayergames.org/game/agent-walker-vs-skibidi-toilets" allowfullscreen></iframe>
 
+<iframe src="//incr.easrng.net/badge?key=changeme" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
 
 <!-- AUDIO -->
 <audio id="buzzer" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
@@ -294,6 +293,7 @@ window.addEventListener('scroll',()=>{
 </script>
 </body>
 </html>
+
 
 
 
