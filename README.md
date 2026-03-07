@@ -159,7 +159,6 @@ audio { display:none; }
     <button class="gameBtn" onclick="openGame('mathFrame')">Coolmath Games</button>
     <button class="gameBtn" onclick="openGame('cheeseFrame')">Stan The Cheese Man</button>
     <button class="gameBtn" onclick="openGame('basketFrame')">Basket Random</button>
-    <button class="gameBtn" onclick="openGame('symbalooFrame')">Symbaloo</button>
     <button class="gameBtn" onclick="openGame('agentFrame')">For Khalil</button>
   </div>
 </div>
@@ -180,7 +179,7 @@ audio { display:none; }
 <iframe id="cheeseFrame" src="https://stanthecheeseman.github.io/" allowfullscreen></iframe>
 <iframe id="basketFrame" src="https://www.twoplayergames.org/game/basket-random" allowfullscreen></iframe>
 <iframe id="agentFrame" src="https://www.twoplayergames.org/game/agent-walker-vs-skibidi-toilets" allowfullscreen></iframe>
-<iframe id="symbalooFrame" src="https://www.symbaloo.com/mix/k12-lesson" allowfullscreen></iframe>
+
 
 
 <!-- AUDIO -->
@@ -294,6 +293,7 @@ window.addEventListener('scroll',()=>{
 </script>
 </body>
 </html>
+
 
 
 
