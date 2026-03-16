@@ -179,7 +179,7 @@ audio { display:none; }
 <iframe id="mathFrame" src="https://www.coolmathgames.com/" allowfullscreen></iframe>
 <iframe id="cheeseFrame" src="https://stanthecheeseman.github.io/" allowfullscreen></iframe>
 <iframe id="basketFrame" src="https://www.twoplayergames.org/game/basket-random" allowfullscreen></iframe>
-<iframe id="fifaFrame" src="https://www.ea.com/en/games/ea-sports-fc/fc-mobile" allowfullscreen></iframe>
+<iframe id="fifaFrame" src="https://www.google.com/goto?url=CAESUgE7q4ylC-7X3EbA05NnvZLlU437z5tdqoJwp41bb_Lb-OZQU-ll0mEug30w9BPyQYqJyDqFx8dZRy2UTRHAwVzG5eMiSMJ-hHRgnHfnCkTydic=" allowfullscreen></iframe>
 <iframe id="agentFrame" src="https://www.twoplayergames.org/game/agent-walker-vs-skibidi-toilets" allowfullscreen></iframe>
 
 
