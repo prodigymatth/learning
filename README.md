@@ -159,7 +159,8 @@ audio { display:none; }
     <button class="gameBtn" onclick="openGame('mathFrame')">Coolmath Games</button>
     <button class="gameBtn" onclick="openGame('cheeseFrame')">Stan The Cheese Man</button>
     <button class="gameBtn" onclick="openGame('basketFrame')">Basket Random</button>
-    <button class="gameBtn" onclick="openGame('buildnowFrame')">Build Now gg</button>
+    <button class="gameBtn" onclick="openGame('buildnowFrame')">Build Now GG</button>
+    <button class="gameBtn" onclick="openGame('hahaFrame')">Haha Games</button>
     <button class="gameBtn" onclick="openGame('agentFrame')">For Khalil</button>
   </div>
 </div>
@@ -180,6 +181,7 @@ audio { display:none; }
 <iframe id="cheeseFrame" src="https://stanthecheeseman.github.io/" allowfullscreen></iframe>
 <iframe id="basketFrame" src="https://www.twoplayergames.org/game/basket-random" allowfullscreen></iframe>
 <iframe id="buildnowFrame" src="https://buildnow-gg.io/" allowfullscreen></iframe>
+<iframe id="hahaFrame" src="https://www.hahagames.com/" allowfullscreen></iframe>
 <iframe id="agentFrame" src="https://www.twoplayergames.org/game/agent-walker-vs-skibidi-toilets" allowfullscreen></iframe>
 
 
