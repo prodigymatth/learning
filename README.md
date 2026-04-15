@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -78,7 +78,7 @@ p {
   <p>
     I'm sorry for taking down the site.<br><br>
     I’ve decided not to continue running it anymore.<br>
-    Thank you to everyone who used and supported it — it really meant a lot.
+   If you can find my new site im making just for myself yay to you but i will not be updating this website
   </p>
 
   <div class="footer">
